@@ -91,7 +91,7 @@ document.getElementById('subcribeButton').addEventListener('click', function() {
     fbq('trackSingleCustom', '45202414779652', 'AddToCartSingleCustom');
     fbq('trackSingleCustom', '45202414779652', 'AddToCartSingleCustom', {currency: "USD", value: 23.00});
     fbq('trackSingleCustom', '45202414779652', 'AddToCartSingleCustom', {currency: "USD", value: 23.10}, {eventID:"AddToCartSingleCustom.0930"});
-  });    
+  },false);    
 
 document.getElementById('registrationButton').addEventListener('click', function() {
   fbq('track', 'CompleteRegistration');
