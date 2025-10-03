@@ -30,6 +30,15 @@
       cbq('set', 'integrationMethod', 'forkFromSnippetCode');
     </script>
   <!-- End Signals Gateway Pixel + Meta Pixel Code -->
+
+
+
+<p>The following is a Meta button test:</p>
+<button id="addToCartButton">Add to cart</button>
+<button id="addToCartButtonCustom">Add to cart Custom</button>
+<button id="addToCartButtonSingle">Add to cart Single</button>
+<button id="addToCartButtonSingleCustom">Add to cart Single Custom</button>
+ 
 <title>pixel test page</title>
 </head>
 <body>
@@ -42,6 +51,9 @@
         <li><button id="purchaseButton" type="button">Purchase</button></li>
         <li><button id="subcribeButton" type="button">Subscribe</button></li>
         <li><button id="registrationButton" type="button">Registration</button></li>
+        <li><button id="addToCartButtonCustom" type="button">Add to cart Custom</button></li>
+        <li><button id="addToCartButtonSingle" type="button">Add to cart Single</button></li>
+        <li><button id="addToCartButtonSingleCustom" type="button">Add to cart Single Custom</button></li>
     </ul>
     </div>
 
@@ -68,6 +80,25 @@ document.getElementById('purchaseButton').addEventListener('click', function() {
 document.getElementById('subcribeButton').addEventListener('click', function() {
   fbq('track', 'Subscribe');
 }, false);
+
+
+  $('#addToCartButtonCustom').click(function() {
+    fbq('trackCustom', 'AddToCartCustom');
+    fbq('trackCustom', 'AddToCartCustom', {currency: "USD", value: 21.00});
+    fbq('trackCustom', 'AddToCartCustom', {currency: "USD", value: 21.10}, {eventID:"trackCustom.0930"});
+  });
+
+  $('#addToCartButtonSingle').click(function() {
+    fbq('trackSingle', '244953571905383', 'AddToCartSingle');
+    fbq('trackSingle', '244953571905383', 'AddToCartSingle', {currency: "USD", value: 22.00});
+    fbq('trackSingle', '244953571905383', 'AddToCartSingle', {currency: "USD", value: 22.10}, {eventID:"trackSingle.0930"});
+  });
+
+  $('#addToCartButtonSingleCustom').click(function() {
+    fbq('trackSingleCustom', '244953571905383', 'AddToCartSingleCustom');
+    fbq('trackSingleCustom', '244953571905383', 'AddToCartSingleCustom', {currency: "USD", value: 23.00});
+    fbq('trackSingleCustom', '244953571905383', 'AddToCartSingleCustom', {currency: "USD", value: 23.10}, {eventID:"AddToCartSingleCustom.0930"});
+  });    
 
 document.getElementById('registrationButton').addEventListener('click', function() {
   fbq('track', 'CompleteRegistration');
