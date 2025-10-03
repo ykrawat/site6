@@ -87,7 +87,7 @@ document.getElementById('subcribeButton').addEventListener('click', function() {
     fbq('trackSingle', '45202414779652', 'AddToCartSingle', {currency: "USD", value: 22.10}, {eventID:"trackSingle.0930"});
   },false);
 
-  $('#addToCartButtonSingleCustom').click(function() {
+    document.getElementById('addToCartButtonSingleCustom').addEventListener('click', function(){
     fbq('trackSingleCustom', '45202414779652', 'AddToCartSingleCustom');
     fbq('trackSingleCustom', '45202414779652', 'AddToCartSingleCustom', {currency: "USD", value: 23.00});
     fbq('trackSingleCustom', '45202414779652', 'AddToCartSingleCustom', {currency: "USD", value: 23.10}, {eventID:"AddToCartSingleCustom.0930"});
